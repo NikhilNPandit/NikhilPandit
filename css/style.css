@@ -1,8 +1,7 @@
+#body{
+     background-color: #f6f4f2;
 
-
-
-
-
+}
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -36,6 +35,23 @@
     }
 }
 
+@media screen and (max-width : 500px) {
+    
+    span{
+        font-size: 5px;
+    }
+    
+}
+
+@media screen and (min-width : 300px) {
+     
+    .col-sm-6 col-md-4 {
+
+        width: 50px;
+        height: 50px;
+    }
+    
+}
 
   .collage-container {
             display: grid;
@@ -114,10 +130,8 @@
   
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    box-sizing: border-box;
+     padding: 20px;
+   
 }
  
 #slideimgs{
@@ -280,7 +294,7 @@ img:hover{
 
 .top-bar {
     height: 45px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
 }
 
 .navbar .dropdown-toggle::after {
@@ -295,7 +309,7 @@ img:hover{
 .navbar .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
-    color: #000000;
+    color: #FFFFFF;
     font-weight: 500;
     outline: none;
 }
@@ -308,8 +322,8 @@ img:hover{
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
         margin-top: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.07);
-         /* background: var(--dark); */
+        border-top: 1px solid rgba(0, 0, 0, .07);
+        background: var(--dark);
     }
 
     .navbar .navbar-nav .nav-link {
@@ -347,7 +361,8 @@ img:hover{
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
+     z-index: 1;
+}
 
 .carousel-control-prev,
 .carousel-control-next {
@@ -522,6 +537,73 @@ img:hover{
     width: 0;
     background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
+}
+
+
+.position-relative:hover img {
+    transform: scale(1.1); /* Zooms in the image */
+    transition: transform 0.8s ease; /* Smooth zoom transition */
+}
+  
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-family: 'Playfair Display', sans-serif;
+    padding-left: 15px;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.position-relative:hover .hover-text {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly scales the text */
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: last baseline;
+    justify-content: last baseline;
+}
+
+
+/* Arrow button animation */
+.hover-arrow {
+    display: inline-block;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: white; /* Circle background color */
+    color: black; /* Arrow color */
+    border-radius: 50%; /* Creates the circle */
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.position-relative:hover .hover-arrow {
+    opacity: 1;
+    transform: translateY(0) translateX(5px); /* Moves the arrow slightly to the right */
+}
+
+
+@media (max-width: 435px), (max-width: 375px) {
+    .container-fluid .row .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 415px) {
+    .container-fluid .row .col-md-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
 }
 
 @media (min-width: 768px) {
